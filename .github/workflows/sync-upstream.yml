@@ -61,7 +61,7 @@ jobs:
       - name: Add upstream remote and fetch
         run: |
           git remote add upstream "https://github.com/${UPSTREAM_REPO}.git"
-          git fetch upstream "${UPSTREAM_BRANCH}" --tags --prune
+          git fetch upstream "${UPSTREAM_BRANCH}:refs/remotes/upstream/${UPSTREAM_BRANCH}" --tags --prune --force
           git fetch origin "${LOCAL_BRANCH}"
 
       - name: Report incoming changes
